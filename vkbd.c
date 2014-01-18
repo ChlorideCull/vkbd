@@ -111,7 +111,7 @@ static int __init vkbd_init(void)
 		goto err_alloc_device;
 	}
 
-	if(proc_create_data(VKBD_PROC_NAME, 0666, NULL, &proc_ops, vkbd) == NULL) {
+	if(proc_create_data(VKBD_PROC_NAME, 0600, NULL, &proc_ops, vkbd) == NULL) {
 		printk(KERN_ERR "cannot initialize /proc/kbd\n");
 		err = -ENOMEM;
 		goto err_alloc_proc;
